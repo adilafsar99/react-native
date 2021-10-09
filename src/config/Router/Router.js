@@ -1,5 +1,5 @@
-import {BasicTextField} from "../../components";
-import {Signup, Login, Profile, Users, Chat} from "../../containers";
+import {BasicTextField} from "../../components/Input";
+import {Signup, Login, Profile, ChatList, Chat} from "../../containers";
 import {BrowserRouter as Router, Route, Switch, Redirect, useLocation, Link} from "react-router-dom";
 import {onAuthStateChanged, auth} from '../Firebase/Firebase.js';
 import {useEffect} from 'react';
@@ -37,7 +37,7 @@ function PublicRoute({component: Component, auth, ...rest}) {
                     <Component />
                 ) : (
                     <Redirect
-                        to={location.state && location.state.from ? location.state.from : "/users"}
+                        to={location.state && location.state.from ? location.state.from : "/profile"}
                     />
                 )
             }
@@ -62,9 +62,9 @@ function AppRouter() {
             <Switch>
                 <PublicRoute auth={isAuth} exact path="/" component={Login} />
                 <PublicRoute auth={isAuth} exact path="/signup" component={Signup} />
-                <PrivateRoute auth={isAuth} exact path="/profile" component={Profile} />
-                <PrivateRoute auth={isAuth} exact path="/users" component={Users} />
-                <PrivateRoute auth={isAuth} exact path="/chat" component={Chat} />
+                <PrivateRoute auth={isAuth} exact path="/profile/:id" component={Profile} />
+                <PrivateRoute auth={isAuth} exact path="/chatList/:uid" component={ChatList} />
+                <PrivateRoute auth={isAuth} exact path="/chat/:cid" component={Chat} />
             </Switch>
         </Router>
     )

@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import {useHistory} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 import {useStyles} from "./styles.js";
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,27 +10,29 @@ import Card from '@mui/material/Card';
 import {BasicTextField} from "../../components/Input";
 import {BasicButton} from "./components/Button";
 import {ImageAvatar} from './components/Avatar';
-import {Link} from 'react-router-dom';
 import "./components/Button/css/style.css";
 import {auth, onAuthStateChanged, signOut, db, doc, getDoc} from "../../config/Firebase/Firebase.js";
 
 const Profile = () => {
   const [loading, setLoading] = useState(false);
   const [docSnap, setDocSnap] = useState(false);
-  useEffect(() => {
+  const {id} = useParams();
+  
+  const getProfile = async () => {
     setLoading(true);
-    let docSnapshot;
-   onAuthStateChanged(auth, async (user) => {
-    if (user) {
-      setLoading(false);
-      const docRef = doc(db, "Users", `${user.uid}`);
-      docSnapshot = await getDoc(docRef);
-      setDocSnap(docSnapshot);
-    }
-  })
-  }, [])
+    const docRef = doc(db, "users", id);
+    const docSnapshot = await getDoc(docRef);
+    setDocSnap(docSnapshot);
+    setLoading(false);
+  }
+  
+  useEffect(() => {
+    getProfile();
+  }, []);
+  
   const classes = useStyles();
   let history = useHistory();
+  
   const logout = () => {
     setLoading(true);
     signOut(auth)
@@ -40,6 +42,10 @@ const Profile = () => {
       history.push("/");
     })
   }
+  
+  const showChats = () => {
+      history.push(`/chatList/${id}`);
+    }
   return(
     <div>
       <AppBar>
@@ -78,7 +84,7 @@ const Profile = () => {
             </Grid>
           </Grid>
           <Grid className={classes.button} sm={12} justifyContent="center" container>
-            <BasicButton label="Edit Profile" />
+            <BasicButton label="Chat" onClick={showChats} />
           </Grid>
         </Grid>
       </main>
