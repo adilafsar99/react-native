@@ -19,6 +19,8 @@
 }
 
 .search_bar {
+    display: flex;
+    align-items: center;
     background-color: rgb(255, 255, 255, 0.3);
     width: 90%;
     margin: 0 auto;
@@ -28,7 +30,7 @@
 
 .icons {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 90%;
     margin: 0 auto;
     margin-top: 20px;
@@ -94,145 +96,54 @@
     color: #fff;
 }
 
-.header {
-    background-color: #fff;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+.create_group_btn {
+  margin-top: 10px;
+}
+
+.group_modal {
+  background-color: "red";
+}
+
+.group_card {
+    background-color: rgb(255, 255, 255, 0.5);
+    padding: 10px;
     display: flex;
-    padding: 20px;
     align-items: center;
-}
-
-.online_dot {
-    width: 10px;
-    height: 10px;
+    margin-top: 10px;
     border-radius: 5px;
-    background-color: green;
-    margin-right: 20px;
+    cursor: pointer;
+    /* justify-content: center; */
 }
 
-.icon_box {
-    background-color: #1976d2;
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    text-align: center;
+.group_card:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.group_card_pic > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
     margin-right: 10px;
 }
 
-.chat_icons {
-    display: flex;
+.group_data > h6 {
+    margin: 0px;
 }
 
-.username {
+.my_badge > span {
+    color: #000;
+    font-weight: bold;
+}
+
+.group_data {
     flex: 2;
 }
 
-.row > div {
-    margin: 0px !important;
-    padding: 0px !important;
-}
-
-.message_box {
-    width: 100%;
-    background-color: #f1f1f1;
-    display: flex;
-    align-items: center;
-}
-
-.message_input {
-    width: 100%;
-}
-
-.message_input > input {
-    width: 100%;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    padding: 20px 10px;
-}
-
-.icon_box_send {
+.group_card:hover .my_badge {
     background-color: #1976d2;
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    text-align: center;
-    margin-right: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 10px;
+    color: #fff !important;
 }
 
-.chat_container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.messages {
-    padding: 10px;
-    overflow: scroll;
-    height: 550px !important;
-}
-
-.message_left > div > img {
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    margin-right: 10px;
-}
-
-.message_left > .user_message {
-    font-size: 14px;
-    background-color: #1976d2;
+.group_card:hover .my_badge > span {
     color: #fff;
-    padding: 10px;
-    border-radius: 10px;
-    width: 40%;
-    position: relative;
-}
-
-.message_arrow {
-    background-color: #1976d2;
-    width: 12px;
-    height: 12px;
-    position: absolute;
-    top: 15px;
-    left: -6px;
-    transform: rotate(45deg);
-}
-
-.message_left {
-    display: flex;
-    margin-top: 10px;
-}
-
-.message_arrow_right {
-    background-color: #f1f1f1;
-    width: 12px;
-    height: 12px;
-    position: absolute;
-    top: 15px;
-    right: -6px;
-    transform: rotate(45deg);
-}
-
-.message_right_image {
-    margin-left: 10px;
-}
-
-.messages {
-    display: flex;
-    flex-direction: column;
-}
-
-.message_right {
-    justify-content: flex-end;
-}
-
-.message_right > .user_message {
-    background-color: #f1f1f1;
-    color: #000;
 }

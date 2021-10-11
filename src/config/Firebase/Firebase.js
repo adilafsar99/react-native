@@ -1,6 +1,6 @@
 import {initializeApp} from "firebase/app";
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut} from "firebase/auth";
-import {getFirestore, collection, doc, addDoc, setDoc, getDoc, getDocs, onSnapshot, orderBy, query, where} from "firebase/firestore";
+import {getFirestore, collection, doc, addDoc, setDoc, updateDoc, getDoc, getDocs, onSnapshot, orderBy, query, where, increment} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAIdo-8ubj-2hDCyutANkRtB1ZMCb252jI",
@@ -27,10 +27,12 @@ export {
   doc,
   addDoc,
   setDoc,
+  updateDoc,
   getDoc,
   getDocs,
   onSnapshot,
   orderBy,
   query,
-  where
+  where,
+  increment
 };

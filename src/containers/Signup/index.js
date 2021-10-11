@@ -91,7 +91,7 @@ const Signup = () => {
       </AppBar>
       <main className={classes.mainDiv}>
         <Grid justifyContent="center" container>
-          <Grid md={6} item>
+          <Grid md={4} item>
             <Card className={classes.card} raised>
             <Formik
       initialValues={{firstName: '', lastName: '', username: '', email: '', password: ''}}
