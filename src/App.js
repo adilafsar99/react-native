@@ -1,10 +1,9 @@
-import ExpenseTracker from './containers/Expense Tracker';
+import "./App.css";
+import {AppRouter} from "./config/Router/Router.js";
 
-const App = () => {
-  return(
-    <>
-      <ExpenseTracker />
-    </>
+function App() {
+  return (
+    <AppRouter />
   )
 }
 

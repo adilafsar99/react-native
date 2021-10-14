@@ -1,0 +1,149 @@
+.users_sidebar {
+    background-color: #df4830;
+    width: 100%;
+    height: 91vh;
+    padding-top: 20px;
+    overflow-y: scroll;
+}
+
+.search_bar > input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 10px 5px;
+    color: #fff;
+}
+
+.search_bar > input::placeholder {
+    color: #fff;
+}
+
+.search_bar {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255, 0.3);
+    width: 90%;
+    margin: 0 auto;
+    padding: 0px 10px;
+    border-radius: 5px;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.users_list {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.user_card {
+    background-color: rgb(255, 255, 255, 0.5);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    /* justify-content: center; */
+}
+
+.user_card:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.user_card_pic > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin-right: 10px;
+}
+
+.user_data > h6 {
+    margin: 0px;
+}
+
+.my_badge {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my_badge > span {
+    color: #000;
+    font-weight: bold;
+}
+
+.user_data {
+    flex: 2;
+}
+
+.user_card:hover .my_badge {
+    background-color: #1976d2;
+    color: #fff !important;
+}
+
+.user_card:hover .my_badge > span {
+    color: #fff;
+}
+
+.create_group_btn {
+  margin-top: 10px;
+}
+
+.group_modal {
+  background-color: "red";
+}
+
+.group_card {
+    background-color: rgb(255, 255, 255, 0.5);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    /* justify-content: center; */
+}
+
+.group_card:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.group_card_pic > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin-right: 10px;
+}
+
+.group_data > h6 {
+    margin: 0px;
+}
+
+.my_badge > span {
+    color: #000;
+    font-weight: bold;
+}
+
+.group_data {
+    flex: 2;
+}
+
+.group_card:hover .my_badge {
+    background-color: #1976d2;
+    color: #fff !important;
+}
+
+.group_card:hover .my_badge > span {
+    color: #fff;
+}

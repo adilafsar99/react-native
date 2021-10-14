@@ -3,7 +3,7 @@ import "./css/style.css"
 
 function BasicButton({label, type, onClick}) {
   return (
-      <Button className="button" variant="contained" type={type} onClick={onClick} fullWidth>{label}</Button>
+      <Button className="button" variant="contained" type={type} onClick={onClick} >{label}</Button>
   );
 }
 
