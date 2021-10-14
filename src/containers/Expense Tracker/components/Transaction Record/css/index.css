@@ -1,0 +1,19 @@
+.transactions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ec9e9e;
+  border: 2px solid;;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding-left: 5px;
+}
+
+.removeButton {
+  color: #ffffff;
+  background-color: #8c2626;
+}
+
+.removeButton:active {
+  background-color: #afafaf;
+}

@@ -18,4 +18,4 @@ function BasicTextField({error, helperText, label, name, type, id, value, onChan
   );
 }
 
-export {BasicTextField};
+export default BasicTextField;

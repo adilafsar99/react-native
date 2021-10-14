@@ -7,4 +7,4 @@ function BasicButton({label, type, onClick}) {
   );
 }
 
-export {BasicButton};
+export default BasicButton;

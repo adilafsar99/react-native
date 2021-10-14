@@ -1,10 +1,10 @@
-import "./App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {AppRouter} from "./config/Router/Router.js";
+import ExpenseTracker from './containers/Expense Tracker';
 
-function App() {
-  return (
-    <AppRouter />
+const App = () => {
+  return(
+    <>
+      <ExpenseTracker />
+    </>
   )
 }
 
