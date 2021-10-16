@@ -1,10 +1,20 @@
-import "./App.css";
-import {AppRouter} from "./config/Router/Router.js";
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import AppRouter from './config/Router'
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: [
+      'Rampart One',
+      'cursive',
+    ].join(','),
+  },});
 
 function App() {
   return (
-    <AppRouter />
-  )
+    <ThemeProvider theme={theme} >
+      <AppRouter />
+    </ThemeProvider>
+  );
 }
 
 export default App;

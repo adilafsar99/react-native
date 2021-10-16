@@ -1,10 +1,10 @@
-import Button from '@mui/material/Button';
+import Button from '@material-ui/core/Button';
 import "./css/style.css"
 
-function BasicButton({label, type, onClick}) {
+function BasicButton({buttonStyles, label, type, onClick}) {
   return (
-      <Button className="button" variant="contained" type={type} onClick={onClick} fullWidth>{label}</Button>
+      <Button style={buttonStyles} className="button" variant="contained" type={type} onClick={onClick} >{label}</Button>
   );
 }
 
-export {BasicButton};
+export default BasicButton;
