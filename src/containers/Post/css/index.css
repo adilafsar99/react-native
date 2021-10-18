@@ -1,0 +1,9 @@
+.posterAndMore {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.poster {
+  display: flex;
+}
