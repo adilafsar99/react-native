@@ -1,0 +1,24 @@
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 12%);
+}
+
+
+.nav-item > a {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.icons_box {
+    width: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.active_link {
+    border-bottom: 2px solid #be1e2d;
+}

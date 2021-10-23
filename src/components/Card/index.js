@@ -1,10 +1,15 @@
 import * as React from 'react';
-import {Card, CardContent, CardMedia, CardActionArea, Typography} from '@material-ui/core';
-import postImage from '../../assets/images/post_image.webp';
+import {Card, CardContent, CardMedia, CardActionArea, Typography, Button} from '@material-ui/core';
+import Rating from 'react-rating';
+import {AiOutlineStar, AiFillStar} from 'react-icons/ai';
+import postImage from '../../assets/images/logo.png';
+import {useDispatch} from 'react-redux';
+import Swal from 'sweetalert2'
 
-export default function ImageCard({fontColor, backgroundColor, borderColor}) {
+export default function ImageCard({item}) {
+  const dispatch = useDispatch();
   return (
-    <Card style={{ border: `1px solid ${borderColor}` }}>
+    <Card>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -12,16 +17,24 @@ export default function ImageCard({fontColor, backgroundColor, borderColor}) {
           image={postImage}
           alt="post_image"
         />
-        <CardContent style={{
-          color: fontColor,
-          backgroundColor: backgroundColor
-        }} >
-          <Typography gutterBottom variant="body1" component="div">
-            Responsive Web Development
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {item?.name}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Follow this non-existent link to learn all best practices that are being implemented right now to create fluid and responsive websites.
+          <Rating
+          emptySymbol={<AiOutlineStar />}
+          fullSymbol={<AiFillStar />}
+          initialRating={item?.initialRating} />
+          <Typography variant="h6" color="text.secondary">
+            Price: Rs {item?.price}
           </Typography>
+          <Button variant="contained" 
+          onClick={() => {
+              dispatch({type: "addToCart", item});
+              Swal.fire('Added to cart!');
+            }} >
+            Add to cart
+          </Button>
         </CardContent>
       </CardActionArea>
     </Card>
