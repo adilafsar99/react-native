@@ -1,0 +1,17 @@
+.container {
+  padding: 10px;
+}
+
+.quick_links {
+  border-bottom: 3px solid;
+  margin-bottom: 10px !important;
+}
+
+.sub_heading {
+  border-bottom: 3px solid;
+}
+
+.table {
+  margin-top: 5px;
+  border: 2px solid;
+}

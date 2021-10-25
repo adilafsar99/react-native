@@ -1,5 +1,4 @@
 import './css/index.css'
-import LOGO from '../../assets/images/logo.png';
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { BsHeartHalf } from 'react-icons/bs'
 import { Link, useLocation } from 'react-router-dom';
@@ -8,13 +7,10 @@ import {useSelector} from 'react-redux';
 function NavBar() {
     let location = useLocation();
     let pathname = location.pathname;
-    const cart = useSelector(state => state.cartProducts.cart);
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">
-                    <img width="150" src={LOGO} alt="" />
-                </a>
+                <h4>React Native</h4>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon" />
                 </button>
@@ -24,23 +20,7 @@ function NavBar() {
                             <Link className="nav-link active" to="/">
                                 Home</Link>
                         </li>
-                        <li className={pathname === "/shop" ? "nav-item active_link" : "nav-item"}>
-                            <Link className="nav-link active" to="/shop">Shop</Link>
-                        </li>
                     </ul>
-                    <div className="icons_box d-flex justify-content-between">
-                        <div>
-                            <BsHeartHalf size={26} color="#be1e2d" />
-                        </div>
-                        <div style={{position: "relative"}}>
-                            <Link className="nav-link active" to="/cart">
-                            <AiOutlineShoppingCart size={32} color="#be1e2d" />
-                           </Link>
-                           {cart.length > 0 && <div style={{position: "absolute", right: "0px", top: "0px", textAlign: "center", width: "20px", height: "20px", borderRadius: "10px", color: "#fff", backgroundColor: "#e03636"}}>
-                             {cart.length}
-                           </div>}
-                        </div>
-                    </div>
                 </div>
             </div>
         </nav>
